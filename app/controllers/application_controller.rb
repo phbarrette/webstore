@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
     def index
+        @products = Product.all
     end
-    def shop 
+    def show
+        @product = Product.find(params[:id])
     end
 end

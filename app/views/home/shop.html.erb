@@ -1,9 +1,23 @@
-This is the shop page
+Welcome to the Shop! Please spend a lot of money $$!!
+
+There are <%= @products.count %> Products! The first cost only <%= @products.first.price %> dollars!
+
+<h2> Your shopping cart has <%= @cart.length %> items </h2>
+<%= link_to "Check Out", checkout_path, class: "btn btn-warning" %>
 
 <ul>
-            <% @products.each do |product| %>
-             <li>
-             <%= link_to product.title, product, class: "btn btn-info btn-small" %>
-            </li>
-           <% end %>
+<% @products.each do |product| %>
+<div class="card" style="width: 18rem;">
+  <img src=<%= product.image%>  class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title"><%= product.name %>: <%= product.price %> </h5>
+    <p class="card-text"><%=product.description %></p>
+    <%= link_to "Buy Now!", buy_path(product), class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>
 </ul>
+<hr/>
+
+
+
