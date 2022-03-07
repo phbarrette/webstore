@@ -6,6 +6,13 @@ class HomeController < ApplicationController
         @products = Product.all
         @cart = session[:cart]
     end
+    def cart
+        if session[:cart].nil?
+            session[:cart] = []
+        end
+        @products = Product.all
+        @cart = session[:cart]
+    end
     def show
     end
     def shop

@@ -3,7 +3,7 @@ Welcome to the Shop! Please spend a lot of money $$!!
 There are <%= @products.count %> Products! The first cost only <%= @products.first.price %> dollars!
 
 <h2> Your shopping cart has <%= @cart.length %> items </h2>
-<%= link_to "Check Out", checkout_path, class: "btn btn-warning" %>
+<%= link_to "View Cart", cart_path, class: "btn btn-warning" %>
 
 <ul>
 <div class="row row-cols-1 row-cols-md-4 g-4">
