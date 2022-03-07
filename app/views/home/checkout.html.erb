@@ -1,3 +1,18 @@
 <h1> Your Cart </h1>
+<ul>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+<% @cart.each do |product| %>
+<div class="col">
+    <div class="card" style="width: 18rem;">
+    <img src=<%= product["image"]%>  class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title"><%= product["name"] %>: $<%= product["price"] %> </h5>
+    </div>
+    </div>
+    </div>
+<% end %>
+</div>
+</ul>
+<hr/>
 <h1> Products have already shipped, en route to your location </h1>
 <%= link_to "Continue Shopping!", shop_path(), class: "btn btn-primary" %>
