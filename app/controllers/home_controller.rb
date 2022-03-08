@@ -31,8 +31,9 @@ class HomeController < ApplicationController
         redirect_to :shop
     end
     def checkout
+        @products = Product.all
         @cart = session[:cart]
         session[:cart] = []
-        @products = Product.all
+        
     end
 end
