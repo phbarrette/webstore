@@ -33,6 +33,11 @@ class HomeController < ApplicationController
     def checkout
         @products = Product.all
         @cart = session[:cart]
+        @cart.each do |item|
+            product = Product.find(item["id"])
+            product.quantity = product.quantity-1
+            product.save
+        end
         session[:cart] = []
         
     end
