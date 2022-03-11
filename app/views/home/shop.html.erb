@@ -10,12 +10,16 @@ There are not <%= @products.count %> Products! The first cost only <%= @products
 <% @products.each do |product| %>
   <div class="col">
     <div class="card h-100" style="width: 18rem;">
-      <%= img_tag product.image,  class="card-img-top" %>
+      <%= image_tag product.image,  class:"card-img-top" %>
       <div class="card-body">
         <h5 class="card-title"><%= product.name %>: $<%= product.price %> </h5>
         <p class="card-text"><%=product.description %></p>
         <p> Quantity: <%= product.quantity%> </p>
-        <%= link_to "Buy Now!", buy_path(product), class: "btn btn-primary" %>
+        <% if product.quantity > 0 %>
+          <%= link_to "Buy Now!", buy_path(product), class: "btn btn-primary" %>
+        <% else %>
+          <p> Sorry, Out of Stock </p>
+        <% end %>
       </div>
     </div>
   </div>
