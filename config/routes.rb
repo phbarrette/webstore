@@ -5,4 +5,5 @@ get "/products/:id/buy", to: "home#buy", as: "buy"
  get "/products/:id", to: "home#show"
  get "/checkout", to: "home#checkout", as: "checkout"
  get "/cart", to: "home#cart", as: "cart"
+ get'products.json', to: 'home#list'
 end

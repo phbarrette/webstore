@@ -30,6 +30,12 @@ class HomeController < ApplicationController
         session[:cart].append(product)
         redirect_to :shop
     end
+    
+    def list 
+        @products = Product.all
+        render json: @products, only: [:id, :name, :quantity, :price]
+    end
+
     def checkout
         @products = Product.all
         @cart = session[:cart]
