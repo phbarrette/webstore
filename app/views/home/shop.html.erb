@@ -1,6 +1,6 @@
 Welcome to the Shop! Please spend a lot of money $$!!
 
-There are not <%= @products.count %> Products! The first cost only <%= @products.first.price %> dollars!
+There are <%= @products.count %> Products! The first cost only <%= @products.first.price %> dollars!
 
 <h2> Your shopping cart has <%= @cart.length %> items </h2>
 <%= link_to "View Cart", cart_path, class: "btn btn-warning" %>
